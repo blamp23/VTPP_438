@@ -1,0 +1,99 @@
+---
+title: "First R Session"
+author: "Benjamin Lamp"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: cerulean
+    highlight: tango
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction {.tabset}
+
+Welcome to R! R is a programming language primarily used for statistical analysis, but it is one of the most commonly used languages that you will see in bioinformatics. By the end of this tutorial you will have
+
+-   Downloaded R to your system
+-   Installed Rstudio
+-   Set up a working directory
+-   Create an Rmarkdown document
+
+While it is good to copy any tutorial you do, please note that there are a million ways to achive one task when it comes to programming. Hopefully by the end of the course you will be able to use R as a tool to aid in any form of research that you encounter!
+
+## 1.Install R and Rstudio
+
+For a video walkthrough - <https://www.youtube.com/watch?v=H9EBlFDGG4k>
+
+As of 8/16/2024, Version 4.4.1 is the most up to date
+
+Install R from this website - <https://cran.r-project.org/>
+
+#### Mac install
+
+You need to know if you are using an Intel or Apple Silicone (M chip) processor.
+
+Download R for macOS -\> R-4.4.1-arm64.pkg (M1-3) or R-4.4.1-x86_64.pkg (Intel)
+
+Double click the downloaded file
+
+Click through setup wizard
+
+#### Windows install
+
+You need to be running at least windows 10 (you probably are).
+
+Download R for Windows -\> base -\> Download R-4.4.1 for Windows
+
+Double click the downloaded file
+
+Click through setup wizard
+
+#### Setup wizard
+
+The defalt suggestions given to you by R is fine, it should just install to your program files.
+
+### Rstudio
+
+Installing R by itself basically just downloads the language to your computer. In order to create, run, and publish scripts, you need to install Rstudio.
+
+Install link - <https://posit.co/download/rstudio-desktop/>
+
+Download the correct installation for your operating system, then double click the file once it has downloaded.
+
+Click through default suggestions in setup wizard.
+
+To change the aesthetics to be easier on the eyes, on the top left click
+
+Tools -\> Global Options... -\> Appearance -\> Editor Theme -\> OK Apply
+
+## 2.Creating a Project Directory
+
+Directory = The system in how files are organized in your computer
+
+Any time you are working on a new project, it is helpful to create a new working directory for the duration of the project. I suggest to make a new folder in your computer called `VTPP_438` where you can keep all of your projects that you work on throughout the semester.
+
+1.  **In File Explorer** Create `VTPP_438` folder
+
+2.  **In Rstudio** Click File -> New Directory -> New Project -> Name Directory `Tutorial` as a subdirectory of `VTPP_438`
+
+3.  **In File Explorer** Create 2 folders inside of   `Tutorial`, `raw_data` and `processed_data`
+
+4.  In a text editor application, create a file called README, with a **SHORT** description of the project, and what each file in your project directory does. This can be updated whenever something new is uploaded. Save to `Tutorial`
+
+Creating a README document is essential in research for reproductabillity of your code! Anyone should be able to look at this document and understand the workflow of your project.
+
+## 3.Create an Rmarkdown Document
+
+You are currently reading an Rmarkdown HTML! Now it is time to create your own...
+
+1.  Open Tutorial Project in Rstudio 
+2.  Click File -> New File -> Rmarkdown... -> OK
+3.  Press `Knit` in the top left on your screen (It should look like a blue ball of yarn)
+4.  Save it as `my_first_markdown`
+5.  Look at the output HTML
+
+Rmarkdown is a super cool way to convey your research to the public. It automatically formats text and code together, and the output html can be sent to anyone to look at without needing to run the R script again.
+
