@@ -1,0 +1,78 @@
+---
+title: "Untitled"
+author: "Benji Lamp"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Basic Tutorial: Editing an R Markdown File
+
+## Introduction
+R Markdown is a powerful tool for creating dynamic documents that integrate code, results, and narrative. This guide will help you get started with editing an R Markdown file.
+
+## 1. Open the R Markdown File
+- Open RStudio.
+- Navigate to the **File** menu, click on **Open File...**, and select the `.Rmd` file you want to edit.
+
+## 2. Understand the Structure
+An R Markdown file consists of three main sections:
+1. **YAML Header**: Contains metadata about the document, such as title, author, and output format. It is located at the top of the file, enclosed in `---`.
+
+   ```yaml
+   ---
+   title: "My First R Markdown"
+   author: "Your Name"
+   date: "2024-08-23"
+   output: html_document
+   ---
+   ```
+2. **Markdown Content**: This is where you write text, add images, links, and format your document using Markdown syntax.
+   ```markdown
+   ## Introduction
+   This is an example of a basic R Markdown document.
+   ```
+3. **Code Chunks**: These are blocks of code that run in R. Code chunks are enclosed in triple backticks and start with `{r}`. The shortcut for creating an R code chunk is `ctrl + alt + i`
+   ```{r}
+   summary(cars)
+   ```
+
+## 3. Edit the YAML Header
+- Update the `title`, `author`, and `date` fields to reflect your document’s details.
+- Choose the desired output format by changing `output: html_document` to another format like `pdf_document` or `word_document`.
+
+## 4. Add and Format Content
+   
+- To create bullet points, use asterisks or hyphens:
+
+```markdown
+   - First point
+   - Second point
+```
+   
+- To create numbered lists, use numbers followed by periods:
+
+```markdown
+   1. First item
+   2. Second item
+```
+
+- To add emphasis, use asterisks or underscores:
+
+```markdown
+   *italic* or _italic_
+   **bold** or __bold__
+```
+
+## 5. Edit Code Chunks
+- Modify existing code or add new chunks by typing your code between the backticks:
+   ````{r}
+   # This is an R code chunk
+   x <- 1:10
+   mean(x)
+
+
+

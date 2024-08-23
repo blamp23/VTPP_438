@@ -1,0 +1,123 @@
+---
+title: "Intro to Data Structures"
+author: "Benji Lamp"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction to Data Structures in R
+
+## 1. Overview
+Data structures are fundamental building blocks in any programming language. In R, data structures are used to store and organize data in a way that makes it easy to access, manipulate, and analyze. This tutorial will introduce you to the basic data structures in R: vectors, matrices, lists, and data frames.
+
+## 2. Vectors
+### What is a Vector?
+A vector is the simplest data structure in R. It is a sequence of elements of the same type, such as numbers, characters, or logical values (TRUE/FALSE).
+
+### Creating a Vector
+You can create a vector using the `c()` function:
+```{r}
+# Numeric vector
+numeric_vector <- c(1, 2, 3, 4, 5)
+
+# Character vector
+char_vector <- c("apple", "banana", "cherry")
+
+# Logical vector
+logical_vector <- c(TRUE, FALSE, TRUE)
+```
+
+### Accessing Vector Elements
+You can access elements of a vector using square brackets `[ ]` and specifying the index:
+```{r}
+# Accessing the second element
+numeric_vector[2]
+```
+
+## 3. Matrices
+### What is a Matrix?
+A matrix is a two-dimensional data structure in R where each element is of the same type. It is essentially a vector with dimensions (rows and columns).
+
+### Creating a Matrix
+You can create a matrix using the `matrix()` function:
+```{r}
+# Creating a 3x3 numeric matrix
+matrix_example <- matrix(1:9, nrow = 3, ncol = 3)
+```
+
+```{r}
+print(matrix_example)
+```
+
+
+### Accessing Matrix Elements
+You can access elements of a matrix by specifying the row and column indices:
+```{r}
+# Accessing the element in the first row, second column
+matrix_example[1, 2]
+
+# Accessing the entire second row
+matrix_example[2, ]
+```
+
+## 4. Lists
+### What is a List?
+A list is a versatile data structure that can store elements of different types, such as numbers, strings, vectors, and even other lists.
+
+### Creating a List
+You can create a list using the `list()` function:
+```{r}
+# Creating a list with different types of elements
+list_example <- list(
+  name = "John Doe",
+  age = 30,
+  scores = c(85, 90, 88)
+)
+
+print(list_example)
+```
+
+### Accessing List Elements
+You can access elements of a list using the `$` operator or double square brackets `[[ ]]`:
+```{r}
+# Accessing the 'name' element
+list_example$name
+
+# Accessing the 'scores' element using double brackets
+list_example[["scores"]]
+```
+
+## 5. Data Frames
+### What is a Data Frame?
+A data frame is a two-dimensional table-like structure where each column can contain different types of data. It is one of the most commonly used data structures in R for data analysis.
+
+### Creating a Data Frame
+You can create a data frame using the `data.frame()` function:
+```{r}
+# Creating a data frame
+df <- data.frame(
+  Name = c("Alice", "Bob", "Charlie"),
+  Age = c(23, 35, 28),
+  Gender = c("F", "M", "M")
+)
+
+print(df)
+```
+
+### Accessing Data Frame Elements
+You can access elements in a data frame by specifying the row and column indices or by using the `$` operator to access columns:
+```{r}
+# Accessing the 'Name' column
+df$Name
+
+# Accessing the element in the first row, second column
+df[1, 2]
+```
+
+## 6. Conclusion
+Understanding these basic data structures—vectors, matrices, lists, and data frames—is crucial for working effectively in R. Each structure serves different purposes, and knowing when and how to use them will help you manage and analyze your data more efficiently.
+

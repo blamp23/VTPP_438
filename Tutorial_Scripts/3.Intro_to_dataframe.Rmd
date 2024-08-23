@@ -1,0 +1,124 @@
+---
+title: "Intro to Dataframes"
+author: "Benji Lamp"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Basic R Dataframe Tutorial
+
+## 1. Working with Data Frames
+### What is a Data Frame?
+A data frame is a table or a two-dimensional array-like structure in R. Each column in a data frame can contain different types of data (numeric, character, factor, etc.).
+
+### Creating a Data Frame
+You can create a data frame using the `data.frame()` function:
+```{r}
+# Creating a simple data frame
+df <- data.frame(
+  Name = c("Alice", "Bob", "Charlie"), # Strings
+  Age = c(23, 35, 28), # Integers
+  Gender = c("F", "M", "M")
+)
+```
+
+### Viewing the Data Frame
+To view the entire data frame, simply type the name of the data frame:
+```{r}
+df
+```
+
+You can also use the `head()` function to view the first few rows:
+```{r}
+head(df)
+```
+
+Use the `str()` function to view how any data variable is structured:
+
+```{r}
+str(df)
+```
+
+
+### Accessing Columns in a Data Frame
+You can access individual columns in a data frame using the `$` operator or double square brackets `[[ ]]`:
+```{r}
+# Accessing the 'Name' column
+df$Name
+
+# Accessing the 'Age' column using double brackets
+df[["Age"]]
+```
+
+### Accessing Rows in a Data Frame
+To access specific rows, use the row number inside square brackets `[ ]`:
+```{r}
+# Accessing the first row
+df[1, ]
+
+# Accessing the third row
+df[3, ]
+```
+
+### Accessing Specific Elements
+To access a specific element, use both row and column indices inside square brackets `[row, column]`:
+
+```{r}
+# Accessing the element in the first row, second column
+df[1, 2]
+
+# Accessing the element in the second row, 'Gender' column
+df[2, "Gender"]
+```
+
+### Adding a New Column
+You can add a new column to a data frame like this:
+```{r}
+# Adding a 'Height' column
+df$Height <- c(5.5, 6.0, 5.8)
+df
+```
+
+### Removing a Column
+To remove a column, assign `NULL` to it:
+```{r}
+# Removing the 'Gender' column
+df$Gender <- NULL
+df
+```
+
+## 2. Basic Functions with Data Frames
+### Summary Statistics
+You can quickly get summary statistics for each column in a data frame using the `summary()`function:
+```{r}
+summary(df)
+```
+
+### Filtering Data
+You can filter rows in a data frame based on certain conditions:
+```{r}
+# Filtering rows where Age is greater than 25
+df[df$Age > 25, ]
+
+# Filtering rows where Name is 'Alice'
+df[df$Name == "Alice", ]
+```
+
+### Sorting Data
+You can sort a data frame based on a specific column using the `order()` function:
+```{r}
+# Sorting by Age in ascending order
+df[order(df$Age), ]
+
+# Sorting by Age in descending order
+df[order(-df$Age), ]
+```
+
+## 3. Conclusion
+This tutorial introduced you to the basics of R programming and working with data frames. Practice creating your own data frames, accessing elements, and performing basic operations to become more comfortable with R!
+
+
