@@ -25,7 +25,7 @@ You can create a vector using the `c()` function:
 numeric_vector <- c(1, 2, 3, 4, 5)
 
 # Character vector
-char_vector <- c("apple", "banana", "cherry")
+char_vector <- c("apple", "banana", "peach")
 
 # Logical vector
 logical_vector <- c(TRUE, FALSE, TRUE)
@@ -73,7 +73,7 @@ You can create a list using the `list()` function:
 ```{r}
 # Creating a list with different types of elements
 list_example <- list(
-  name = "John Doe",
+  name = "Benji Lamp",
   age = 30,
   scores = c(85, 90, 88)
 )
@@ -100,7 +100,7 @@ You can create a data frame using the `data.frame()` function:
 ```{r}
 # Creating a data frame
 df <- data.frame(
-  Name = c("Alice", "Bob", "Charlie"),
+  Name = c("Alice", "Lewis", "Mike"),
   Age = c(23, 35, 28),
   Gender = c("F", "M", "M")
 )

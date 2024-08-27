@@ -11,7 +11,7 @@
 
 <meta name="author" content="Benji Lamp" />
 
-<meta name="date" content="2024-08-23" />
+<meta name="date" content="2024-08-27" />
 
 <title>Intro to Data Structures</title>
 
@@ -352,7 +352,7 @@ display: none;
 
 <h1 class="title toc-ignore">Intro to Data Structures</h1>
 <h4 class="author">Benji Lamp</h4>
-<h4 class="date">2024-08-23</h4>
+<h4 class="date">2024-08-27</h4>
 
 </div>
 
@@ -382,7 +382,7 @@ values (TRUE/FALSE).</p>
 numeric_vector &lt;- c(1, 2, 3, 4, 5)
 
 # Character vector
-char_vector &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
+char_vector &lt;- c(&quot;apple&quot;, &quot;banana&quot;, &quot;peach&quot;)
 
 # Logical vector
 logical_vector &lt;- c(TRUE, FALSE, TRUE)</code></pre>
@@ -440,14 +440,14 @@ lists.</p>
 <p>You can create a list using the <code>list()</code> function:</p>
 <pre class="r"><code># Creating a list with different types of elements
 list_example &lt;- list(
-  name = &quot;John Doe&quot;,
+  name = &quot;Benji Lamp&quot;,
   age = 30,
   scores = c(85, 90, 88)
 )
 
 print(list_example)</code></pre>
 <pre><code>## $name
-## [1] &quot;John Doe&quot;
+## [1] &quot;Benji Lamp&quot;
 ## 
 ## $age
 ## [1] 30
@@ -461,7 +461,7 @@ print(list_example)</code></pre>
 or double square brackets <code>[[ ]]</code>:</p>
 <pre class="r"><code># Accessing the &#39;name&#39; element
 list_example$name</code></pre>
-<pre><code>## [1] &quot;John Doe&quot;</code></pre>
+<pre><code>## [1] &quot;Benji Lamp&quot;</code></pre>
 <pre class="r"><code># Accessing the &#39;scores&#39; element using double brackets
 list_example[[&quot;scores&quot;]]</code></pre>
 <pre><code>## [1] 85 90 88</code></pre>
@@ -481,16 +481,16 @@ commonly used data structures in R for data analysis.</p>
 function:</p>
 <pre class="r"><code># Creating a data frame
 df &lt;- data.frame(
-  Name = c(&quot;Alice&quot;, &quot;Bob&quot;, &quot;Charlie&quot;),
+  Name = c(&quot;Alice&quot;, &quot;Lewis&quot;, &quot;Mike&quot;),
   Age = c(23, 35, 28),
   Gender = c(&quot;F&quot;, &quot;M&quot;, &quot;M&quot;)
 )
 
 print(df)</code></pre>
-<pre><code>##      Name Age Gender
-## 1   Alice  23      F
-## 2     Bob  35      M
-## 3 Charlie  28      M</code></pre>
+<pre><code>##    Name Age Gender
+## 1 Alice  23      F
+## 2 Lewis  35      M
+## 3  Mike  28      M</code></pre>
 </div>
 <div id="accessing-data-frame-elements" class="section level3">
 <h3>Accessing Data Frame Elements</h3>
@@ -499,7 +499,7 @@ column indices or by using the <code>$</code> operator to access
 columns:</p>
 <pre class="r"><code># Accessing the &#39;Name&#39; column
 df$Name</code></pre>
-<pre><code>## [1] &quot;Alice&quot;   &quot;Bob&quot;     &quot;Charlie&quot;</code></pre>
+<pre><code>## [1] &quot;Alice&quot; &quot;Lewis&quot; &quot;Mike&quot;</code></pre>
 <pre class="r"><code># Accessing the element in the first row, second column
 df[1, 2]</code></pre>
 <pre><code>## [1] 23</code></pre>
