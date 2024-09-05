@@ -1,0 +1,88 @@
+---
+title: "Test Codekink input"
+author: "Benji Lamp"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Libraries
+
+```{r}
+library(codelink)
+library(here)
+
+```
+
+
+
+
+```{r}
+target_folder <- here("Raw Test Data", "total_mRNA")
+
+# List files with pattern "TXT" from the specified folder
+
+f <- list.files(path = target_folder, pattern = "(?i)txt$", full.names = TRUE)
+
+# (?i) regex case insensitive flag 
+# txt = substring 
+# $ is end of string 
+
+# Read the Codelink set from the listed files
+codset <- readCodelinkSet(filename = f)
+str(codset)
+
+codset@phenoData@data
+
+data(codset)
+print(is(codset))
+
+head(exprs(codset))
+
+head(getBkg(codset))
+
+head(getSNR(codset))
+
+head(getFlag(codset))
+
+head(getWeight(codset))
+
+head(pData(codset))
+```
+
+# Background correction 
+If Spot mean and Bkgd median values are available then background correction can be performed with codCorrect()
+```{r}
+codset_correct = codCorrect(codset, method = "normexp", offset = 0)
+```
+# Norm 
+```{r}
+codset_norm <- codNormalize(codset_correct, method = "loess", weights = getWeight(codset), loess.method = "fast")
+```
+
+
+```{r}
+codPlot(codset)
+codPlot(codset_correct)
+codPlot(codset_norm)
+codPlot(codset, what = "density")
+codPlot(codset_correct, what = "density")
+codPlot(codset_norm, what = "density")
+
+codPlot(codset, what = "image")
+codPlot(codset_norm, what = "image")
+```
+
+
+```{r}
+fit = lmFit(codset_norm, design = c(1, 1, 2, 2), weights = getWeight(codset))
+fit2 = eBayes(fit)
+topTable(fit2)
+```
+
+
+
+

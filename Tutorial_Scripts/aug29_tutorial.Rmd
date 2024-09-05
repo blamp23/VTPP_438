@@ -1,0 +1,30 @@
+---
+title: "Untitled"
+author: "Benji Lamp"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+df <- data.frame(
+  row.names = c("mir-123", "mir-456", "mir-789"),
+  control = c(13, 2800, 500),
+  treatment_1 = c(2000, 700, 600)
+)
+
+print(df)
+-```
+```{r}
+df$treatment_2 <- c(600, 800, 840)
+
+print(df)
+
+df[df$Name == "Alice", ]
+```
+```
+
+
